@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHSIDE - Premium Fashion</title>
+    <meta name="description" content="Discover SOUTHSIDE's premium fashion collection with modern designs and quality craftsmanship.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SOUTHSIDE</span>
+            </div>
+            <nav class="nav">
+                <a href="#" onclick="showCategory('women')">WOMEN</a>
+                <a href="#" onclick="showCategory('men')">MEN</a>
+                <a href="#" onclick="showCategory('kids')">KIDS</a>
+                <a href="#featured">SALE</a>
+                <a href="#about">ABOUT</a>
+            </nav>
+            <div class="actions">
+                <button class="cart-btn" onclick="showCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Spring Collection 2025</h1>
+            <p>Discover timeless pieces crafted with precision</p>
+            <a href="#featured" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('women')">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=500&fit=crop" alt="Women">
+                    <div class="category-content">
+                        <h3>Women</h3>
+                        <p>Elegant & Contemporary</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('men')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" alt="Men">
+                    <div class="category-content">
+                        <h3>Men</h3>
+                        <p>Modern & Sophisticated</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('kids')">
+                    <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=400&h=500&fit=crop" alt="Kids">
+                    <div class="category-content">
+                        <h3>Kids</h3>
+                        <p>Playful & Comfortable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2>Featured Collection</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-category="women">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=400&fit=crop" alt="Tailored Jacket">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tailored Jacket</h3>
+                        <div class="rating">★★★★★ (24)</div>
+                        <div class="price">₹8,490</div>
+                        <button class="btn-secondary" onclick="addToCart('jacket', 8490, 'Tailored Jacket')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop" alt="Premium Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium White Shirt</h3>
+                        <div class="rating">★★★★☆ (18)</div>
+                        <div class="price">₹4,240</div>
+                        <button class="btn-secondary" onclick="addToCart('shirt', 4240, 'Premium White Shirt')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="women">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=400&fit=crop" alt="Wide-leg Trousers">
+                        <div class="product-badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Wide-leg Trousers</h3>
+                        <div class="rating">★★★★★ (31)</div>
+                        <div class="price">
+                            <span class="current">₹5,090</span>
+                            <span class="original">₹6,790</span>
+                        </div>
+                        <button class="btn-secondary" onclick="addToCart('trousers', 5090, 'Wide-leg Trousers')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=300&h=400&fit=crop" alt="Designer Coat">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Coat</h3>
+                        <div class="rating">★★★★☆ (12)</div>
+                        <div class="price">₹7,640</div>
+                        <button class="btn-secondary" onclick="addToCart('coat', 7640, 'Designer Coat')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About SOUTHSIDE</h2>
+                    <p>We believe fashion should be an expression of individuality. Our collections blend contemporary design with timeless elegance, creating pieces that transcend seasons and trends.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="number">10K+</span>
+                            <span class="label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">500+</span>
+                            <span class="label">Unique Designs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">50+</span>
+                            <span class="label">Countries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=400&fit=crop" alt="SOUTHSIDE Fashion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">SOUTHSIDE</span>
+                    </div>
+                    <p>Premium fashion that defines your style.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOUTHSIDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
