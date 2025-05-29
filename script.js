@@ -193,7 +193,7 @@ function filterProducts(filter) {
     });
 }
 
-// Search functionality
+// Search function
 function searchProducts(searchTerm) {
     const products = document.querySelectorAll('.product-card');
     const term = searchTerm.toLowerCase().trim();
@@ -237,6 +237,8 @@ function filterByPriceRange(minPrice, maxPrice) {
         }
     });
 }
+
+
 
 // Utility function to clear all filters
 function clearAllFilters() {
