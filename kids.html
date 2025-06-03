@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHSIDE KIDS - Premium Fashion for Children</title>
+    <meta name="description" content="Discover SOUTHSIDE's premium kids fashion collection with playful designs and quality craftsmanship.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kids.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SOUTHSIDE</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="#" onclick="showCategory('girls')">GIRLS</a>
+                <a href="#" onclick="showCategory('boys')">BOYS</a>
+                <a href="#" onclick="showCategory('baby')">BABY</a>
+                <a href="#featured">SALE</a>
+                <a href="#about">ABOUT</a>
+            </nav>
+            <div class="actions">
+                <button class="cart-btn" onclick="showCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kids Collection 2025</h1>
+            <p>Playful designs meet premium comfort for your little ones</p>
+            <a href="#featured" class="btn-primary">Shop Kids Now</a>
+        </div>
+    </section>
+
+    <!-- Age Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Age Group</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('girls')">
+                    <img src="https://images.unsplash.com/photo-1544776527-59c6490fb81c?w=400&h=500&fit=crop" alt="Girls">
+                    <div class="category-content">
+                        <h3>Girls</h3>
+                        <p>Ages 2-14 | Cute & Stylish</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('boys')">
+                    <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=400&h=500&fit=crop" alt="Boys">
+                    <div class="category-content">
+                        <h3>Boys</h3>
+                        <p>Ages 2-14 | Cool & Comfortable</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('baby')">
+                    <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?w=400&h=500&fit=crop" alt="Baby">
+                    <div class="category-content">
+                        <h3>Baby</h3>
+                        <p>0-24 Months | Soft & Safe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2>Featured Kids Collection</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-category="girls">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544776527-59c6490fb81c?w=300&h=400&fit=crop" alt="Floral Dress">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Floral Summer Dress</h3>
+                        <div class="rating">★★★★★ (28)</div>
+                        <div class="price">₹2,490</div>
+                        <div class="sizes">Ages: 4-6, 6-8, 8-10, 10-12</div>
+                        <button class="btn-secondary" onclick="addToCart('floral-dress', 2490, 'Floral Summer Dress')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="boys">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=300&h=400&fit=crop" alt="Casual Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Adventure Polo Shirt</h3>
+                        <div class="rating">★★★★☆ (22)</div>
+                        <div class="price">₹1,890</div>
+                        <div class="sizes">Ages: 3-5, 5-7, 7-9, 9-11</div>
+                        <button class="btn-secondary" onclick="addToCart('polo-shirt', 1890, 'Adventure Polo Shirt')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="girls">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=400&fit=crop" alt="Denim Jacket">
+                        <div class="product-badge sale">-30%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Denim Jacket</h3>
+                        <div class="rating">★★★★★ (35)</div>
+                        <div class="price">
+                            <span class="current">₹2,790</span>
+                            <span class="original">₹3,990</span>
+                        </div>
+                        <div class="sizes">Ages: 4-6, 6-8, 8-10, 10-12</div>
+                        <button class="btn-secondary" onclick="addToCart('denim-jacket', 2790, 'Denim Jacket')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="boys">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop" alt="Cargo Shorts">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Explorer Cargo Shorts</h3>
+                        <div class="rating">★★★★☆ (19)</div>
+                        <div class="price">₹1,590</div>
+                        <div class="sizes">Ages: 3-5, 5-7, 7-9, 9-11</div>
+                        <button class="btn-secondary" onclick="addToCart('cargo-shorts', 1590, 'Explorer Cargo Shorts')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="baby">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?w=300&h=400&fit=crop" alt="Baby Romper">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Cotton Romper</h3>
+                        <div class="rating">★★★★★ (42)</div>
+                        <div class="price">₹1,290</div>
+                        <div class="sizes">0-6M, 6-12M, 12-18M, 18-24M</div>
+                        <button class="btn-secondary" onclick="addToCart('baby-romper', 1290, 'Organic Cotton Romper')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="girls">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544776527-59c6490fb81c?w=300&h=400&fit=crop" alt="Unicorn T-shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Magical Unicorn Tee</h3>
+                        <div class="rating">★★★★★ (31)</div>
+                        <div class="price">₹990</div>
+                        <div class="sizes">Ages: 2-4, 4-6, 6-8, 8-10</div>
+                        <button class="btn-secondary" onclick="addToCart('unicorn-tee', 990, 'Magical Unicorn Tee')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="size-guide" id="size-guide">
+        <div class="container">
+            <h2>Kids Size Guide</h2>
+            <div class="size-content">
+                <div class="size-text">
+                    <h3>Find the Perfect Fit</h3>
+                    <p>Our kids clothing is designed with growing children in mind. Each piece offers comfortable room for movement while maintaining a stylish silhouette.</p>
+                    <div class="size-tips">
+                        <div class="tip">
+                            <span class="tip-icon">📏</span>
+                            <div>
+                                <strong>Measure Twice</strong>
+                                <p>Check chest, waist, and height for the best fit</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">🌱</span>
+                            <div>
+                                <strong>Room to Grow</strong>
+                                <p>Consider sizing up for longer wear</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">💝</span>
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <p>Free exchanges within 30 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Height (cm)</th>
+                                <th>Chest (cm)</th>
+                                <th>Waist (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2-3Y</td><td>92-98</td><td>52-54</td><td>50-52</td></tr>
+                            <tr><td>4-5Y</td><td>104-110</td><td>56-58</td><td>54-56</td></tr>
+                            <tr><td>6-7Y</td><td>116-122</td><td>60-62</td><td>58-60</td></tr>
+                            <tr><td>8-9Y</td><td>128-134</td><td>64-67</td><td>62-65</td></tr>
+                            <tr><td>10-11Y</td><td>140-146</td><td>70-74</td><td>68-72</td></tr>
+                            <tr><td>12-14Y</td><td>152-164</td><td>78-84</td><td>76-82</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Kids Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>SOUTHSIDE Kids</h2>
+                    <p>We understand that kids need clothes that can keep up with their adventures. Our kids collection combines durability with style, using premium materials that are gentle on sensitive skin while standing up to active play.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="number">5K+</span>
+                            <span class="label">Happy
+                                    Families</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">200+</span>
+                            <span class="label">Kids Designs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">100%</span>
+                            <span class="label">Safe Materials</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&h=400&fit=crop" alt="SOUTHSIDE Kids Fashion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">SOUTHSIDE</span>
+                    </div>
+                    <p>Premium fashion for the whole family.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kids Help</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Safety Standards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Kids Safety</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Parent Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOUTHSIDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="kids.js">
+    </script>
+
+</body>
+</html>
+
